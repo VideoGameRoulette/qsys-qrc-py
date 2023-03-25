@@ -5,8 +5,8 @@ import asyncio
 import json
 import socket
 import os
-address = user = os.environ.get('IP') or "localhost"
-port = user = os.environ.get('PORT') or 1710
+address = os.environ.get('IP') or "localhost"
+port = os.environ.get('PORT') or 1710
 user = os.environ.get('USER') or "dev"
 pin = os.environ.get('PIN') or "1234"
 BUFFER_SIZE = 1024
