@@ -11,6 +11,7 @@ pin = os.environ.get('PIN') or "1234"
 async def main():
     # Connect to QRC
     sock = connect_to_qrc(address, port)
+    # noop loop to maintain connection
     asyncio.create_task(prevent_timeout(sock))
 
 
