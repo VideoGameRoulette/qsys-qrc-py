@@ -209,44 +209,37 @@ async def get_component_components(
 		<header class="w-full h-full bg-gray-800 text-white flex justify-start items-center gap-4 py-4 px-6">
 			<div class="text-lg font-bold">qsys-qrc-py</div>
 			<div class="bg-gray-600 text-gray-200 rounded-md px-3 py-1">Version 0.0.1</div>
-			<button type="button" class="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-white" aria-expanded="false" id="nav-toggle">
-				<span>Solutions</span>
-				<svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-					<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-				</svg>
-			</button>
 		</header>
 		<div class="w-full h-full overflow-hidden">
-			<div class="hidden relative top-0 left-0 z-10 flex w-full h-full bg-slate-800 overflow-auto" id="nav-content">
-				<div class="w-full shrink bg-gray-700 p-4 text-sm font-semibold leading-6 text-gray-200 shadow-lg ring-1 ring-gray-900/5 overflow-auto">
-					<h2 class="px-4 py-3 text-lg font-bold">Table of Contents</h2>
-					<ul>
-						<li><a href="#Getting-started" class="block py-2 hover:bg-gray-700 pl-4">Getting started</a></li>
-						<li><a href="#Prerequisites" class="block py-2 hover:bg-gray-700 pl-4">Prerequisites</a></li>
-						<li><a href="#Installation" class="block py-2 hover:bg-gray-700 pl-4">Installation</a></li>
-						<li><a href="#Usage" class="block py-2 hover:bg-gray-700 pl-4">Usage</a></li>
-					</ul>
-					<h2 class="px-4 py-3 text-lg font-bold">Functions</h2>
-					<ul>
-						<li><a href="#send_command" class="block py-2 hover:bg-gray-700 pl-4">send_command</a></li>
-						<li><a href="#logon" class="block py-2 hover:bg-gray-700 pl-4">logon</a></li>
-						<li><a href="#no_op" class="block py-2 hover:bg-gray-700 pl-4">no_op</a></li>
-						<li><a href="#get_status" class="block py-2 hover:bg-gray-700 pl-4">get_status</a></li>
-						<li><a href="#get_control" class="block py-2 hover:bg-gray-700 pl-4">get_control</a></li>
-						<li><a href="#set_control" class="block py-2 hover:bg-gray-700 pl-4">set_control</a></li>
-						<li><a href="#get_component" class="block py-2 hover:bg-gray-700 pl-4">get_component</a></li>
-						<li><a href="#set_component" class="block py-2 hover:bg-gray-700 pl-4">set_component</a></li>
-						<li><a href="#get_component_controls" class="block py-2 hover:bg-gray-700 pl-4">get_component_controls</a></li>
-						<li><a href="#get_component_components" class="block py-2 hover:bg-gray-700 pl-4">get_component_components</a></li>
-					</ul>
-				</div>
-			</div>
 			<main class="bg-gray-700 w-full h-full overflow-y-auto">
 				<div class="w-full h-full flex flex-col p-8 gap-4 text-gray-200">
 					<!-- Main content goes here -->
 					<div class="w-full h-full">
 						<h1 class="text-3xl font-bold mb-4">Q-SYS Remote Control API</h1>
 						<p class="mb-4">This is a Python module for interfacing with the Q-SYS remote control API over a TCP/IP socket connection. The API provides a way to get and set values of controls in the Q-SYS Designer environment.</p>
+						<div class="w-full bg-gray-800 p-4 text-sm leading-6 text-gray-300 shadow-lg mb-4">
+							<h2 class="px-4 py-3 text-lg font-bold">Table of Contents</h2>
+							<ul class="text-gray-400">
+							  <li><a href="#Getting-started" class="block py-2 hover:text-white pl-4">Getting started</a></li>
+							  <li><a href="#Prerequisites" class="block py-2 hover:text-white pl-4">Prerequisites</a></li>
+							  <li><a href="#Installation" class="block py-2 hover:text-white pl-4">Installation</a></li>
+							  <li><a href="#Usage" class="block py-2 hover:text-white pl-4">Usage</a></li>
+							</ul>
+							<h2 class="px-4 py-3 text-lg font-bold">Functions</h2>
+							<ul class="text-gray-400">
+							  <li><a href="#send_command" class="block py-2 hover:text-white pl-4">send_command</a></li>
+							  <li><a href="#logon" class="block py-2 hover:text-white pl-4">logon</a></li>
+							  <li><a href="#no_op" class="block py-2 hover:text-white pl-4">no_op</a></li>
+							  <li><a href="#get_status" class="block py-2 hover:text-white pl-4">get_status</a></li>
+							  <li><a href="#get_control" class="block py-2 hover:text-white pl-4">get_control</a></li>
+							  <li><a href="#set_control" class="block py-2 hover:text-white pl-4">set_control</a></li>
+							  <li><a href="#get_component" class="block py-2 hover:text-white pl-4">get_component</a></li>
+							  <li><a href="#set_component" class="block py-2 hover:text-white pl-4">set_component</a></li>
+							  <li><a href="#get_component_controls" class="block py-2 hover:text-white pl-4">get_component_controls</a></li>
+							  <li><a href="#get_component_components" class="block py-2 hover:text-white pl-4">get_component_components</a></li>
+							</ul>
+						  </div>
+						  
 						<h3 class="text-xl font-bold mb-2" id="Getting-started">Getting started</h3>
 						<h4 class="text-lg font-bold mb-2" id="Prerequisites">Prerequisites</h4>
 						<ul class="list-disc list-inside mb-4">
