@@ -51,20 +51,20 @@
 						</ul>
 						<h4 class="text-lg font-bold mb-2" id="Installation">Installation</h4>
 						<p class="mb-4">You can install this module using pip:</p>
-						<div class="bg-gray-800 p-4 rounded-lg mb-8">
+						<div class="bg-gray-900 p-4 rounded-lg mb-8">
 							<code class="text-gray-400">under construction</code>
 						</div>
 						<h3 class="text-xl font-bold mb-2" id="Usage">Usage</h3>
 						<p>To use this module, you will need to have a Q-SYS Core Designer project open and running on your network.</p>
 
 						<h3 class="text-lg font-bold my-4" id="send_command">send_command</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def send_command(
-	sock: socket.socket,
-	method: str,
-	params: Iterable[str]
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">send_command</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">method:</span> <span class="text-emerald-400">str</span>,
+	<span class="text-sky-400">params:</span> <span class="text-emerald-400">Iterable<span class="text-indigo-400">[</span>str<span class="text-indigo-400">]</span></span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC command to a Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -74,11 +74,11 @@ async def send_command(
 						</ul>
 
 						<h3 class="text-lg font-bold my-4" id="logon">logon</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def logon(
-	sock: socket.socket
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">logon</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Logs in to a Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -86,11 +86,11 @@ async def logon(
 						</ul>
 
 						<h3 class="text-lg font-bold my-4" id="no_op">no_op</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def no_op(
-	sock: socket.socket
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">no_op</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request with no operation to the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -98,11 +98,11 @@ async def no_op(
 						</ul>
 
 						<h3 class="text-lg font-bold my-4" id="get_status">get_status</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def get_status(
-	sock: socket.socket
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">get_status</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get the status of the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -110,12 +110,12 @@ async def get_status(
 						</ul>
 
 						<h3 class="text-lg font-bold my-4" id="get_control">get_control</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def get_control(
-	sock: socket.socket,
-	name: str
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">get_control</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get the value of a control in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -124,14 +124,14 @@ async def get_control(
 						</ul>
 
 						<h3 class="text-lg font-bold my-4" id="set_control">set_control</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def set_control(
-	sock: socket.socket, 
-	name: str, 
-	value: int, 
-	ramp: Optional[float] = None
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">set_control</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>,
+	<span class="text-sky-400">value:</span> <span class="text-emerald-400">int</span>,
+	<span class="text-sky-400">ramp:</span> <span class="text-emerald-400">Optional<span class="text-indigo-400">[</span>float<span class="text-indigo-400">]</span></span> = <span class="text-blue-400">None</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get the value of a control in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -142,13 +142,13 @@ async def set_control(
 						</ul>
 
 						<h3 class="text-lg font-bold my-4 text-white" id="get_component">get_component</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python text-white">
-async def get_component(
-	sock: socket.socket,
-	name: str,
-	control_name: str
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">get_component</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>,
+	<span class="text-sky-400">control_name:</span> <span class="text-emerald-400">str</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get the value of a control for a specific component in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -158,13 +158,13 @@ async def get_component(
 						</ul>
 
 						<h3 class="text-lg font-bold my-4" id="set_component">set_component</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def set_component(
-	sock: socket.socket,
-	name: str,
-	value: int
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">set_component</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>,
+	<span class="text-sky-400">value:</span> <span class="text-emerald-400">int</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to set the value of a control for a specific component in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -174,12 +174,12 @@ async def set_component(
 						</ul>
 
 						<h3 class="text-lg font-bold my-4" id="get_component_controls">get_component_controls</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def get_component_controls(
-	sock: socket.socket,
-	name: str
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">get_component_controls</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get all controls of a component in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -188,12 +188,12 @@ async def get_component_controls(
 						</ul>
 
 						<h3 class="text-lg font-bold my-4" id="get_component_components">get_component_components</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def get_component_components(
-	sock: socket.socket,
-	name: str
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">get_component_components</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get all child components of a component in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8 pb-8">
@@ -250,28 +250,28 @@ async def get_component_components(
 					<div class="w-full h-full">
 						<h1 class="text-3xl font-bold mb-4">Q-SYS Remote Control API</h1>
 						<p class="mb-4">This is a Python module for interfacing with the Q-SYS remote control API over a TCP/IP socket connection. The API provides a way to get and set values of controls in the Q-SYS Designer environment.</p>
-						<h3 class="text-xl font-bold mb-2" id="Getting-started_m">Getting started</h3>
-						<h4 class="text-lg font-bold mb-2" id="Prerequisites_m">Prerequisites</h4>
+						<h3 class="text-xl font-bold mb-2" id="Getting-started">Getting started</h3>
+						<h4 class="text-lg font-bold mb-2" id="Prerequisites">Prerequisites</h4>
 						<ul class="list-disc list-inside mb-4">
 							<li>Python 3.7 or higher</li>
 							<li>Q-SYS Core Designer</li>
 						</ul>
-						<h4 class="text-lg font-bold mb-2" id="Installation_m">Installation</h4>
+						<h4 class="text-lg font-bold mb-2" id="Installation">Installation</h4>
 						<p class="mb-4">You can install this module using pip:</p>
-						<div class="bg-gray-800 p-4 rounded-lg mb-8">
+						<div class="bg-gray-900 p-4 rounded-lg mb-8">
 							<code class="text-gray-400">under construction</code>
 						</div>
-						<h3 class="text-xl font-bold mb-2" id="Usage_m">Usage</h3>
+						<h3 class="text-xl font-bold mb-2" id="Usage">Usage</h3>
 						<p>To use this module, you will need to have a Q-SYS Core Designer project open and running on your network.</p>
 
-						<h3 class="text-lg font-bold my-4" id="send_command_m">send_command</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<h3 class="text-lg font-bold my-4" id="send_command">send_command</h3>
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def send_command(
-	sock: socket.socket,
-	method: str,
-	params: Iterable[str]
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">send_command</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">method:</span> <span class="text-emerald-400">str</span>,
+	<span class="text-sky-400">params:</span> <span class="text-emerald-400">Iterable<span class="text-indigo-400">[</span>str<span class="text-indigo-400">]</span></span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC command to a Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -280,49 +280,49 @@ async def send_command(
 							<li><code>params</code>: The parameters to pass to the method.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="logon_m">logon</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<h3 class="text-lg font-bold my-4" id="logon">logon</h3>
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def logon(
-	sock: socket.socket
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">logon</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Logs in to a Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
 							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="no_op_m">no_op</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<h3 class="text-lg font-bold my-4" id="no_op">no_op</h3>
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def no_op(
-	sock: socket.socket
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">no_op</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request with no operation to the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
 							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="get_status_m">get_status</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<h3 class="text-lg font-bold my-4" id="get_status">get_status</h3>
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def get_status(
-	sock: socket.socket
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">get_status</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get the status of the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
 							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="get_control_m">get_control</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<h3 class="text-lg font-bold my-4" id="get_control">get_control</h3>
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def get_control(
-	sock: socket.socket,
-	name: str
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">get_control</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get the value of a control in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -330,15 +330,15 @@ async def get_control(
 							<li><code>name</code>: The name of the control to get the value of.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="set_control_m">set_control</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<h3 class="text-lg font-bold my-4" id="set_control">set_control</h3>
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def set_control(
-	sock: socket.socket, 
-	name: str, 
-	value: int, 
-	ramp: Optional[float] = None
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">set_control</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>,
+	<span class="text-sky-400">value:</span> <span class="text-emerald-400">int</span>,
+	<span class="text-sky-400">ramp:</span> <span class="text-emerald-400">Optional<span class="text-indigo-400">[</span>float<span class="text-indigo-400">]</span></span> = <span class="text-blue-400">None</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get the value of a control in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -348,14 +348,14 @@ async def set_control(
 							<li><code>ramp (optional)</code>: The time in seconds it takes to ramp the control to the new value.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4 text-white" id="get_component_m">get_component</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<h3 class="text-lg font-bold my-4 text-white" id="get_component">get_component</h3>
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python text-white">
-async def get_component(
-	sock: socket.socket,
-	name: str,
-	control_name: str
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">get_component</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>,
+	<span class="text-sky-400">control_name:</span> <span class="text-emerald-400">str</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get the value of a control for a specific component in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -364,14 +364,14 @@ async def get_component(
 							<li><code>control_name</code>: The name of the control to get the value of.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="set_component_m">set_component</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<h3 class="text-lg font-bold my-4" id="set_component">set_component</h3>
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def set_component(
-	sock: socket.socket,
-	name: str,
-	value: int
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">set_component</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>,
+	<span class="text-sky-400">value:</span> <span class="text-emerald-400">int</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to set the value of a control for a specific component in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -380,13 +380,13 @@ async def set_component(
 							<li><code>value</code>: The value to set the control to.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="get_component_controls_m">get_component_controls</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<h3 class="text-lg font-bold my-4" id="get_component_controls">get_component_controls</h3>
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def get_component_controls(
-	sock: socket.socket,
-	name: str
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">get_component_controls</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get all controls of a component in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8">
@@ -394,13 +394,13 @@ async def get_component_controls(
 							<li><code>name</code>: The name of the component to get the controls from.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="get_component_components_m">get_component_components</h3>
-						<pre class="bg-gray-800 p-4 rounded-lg">
+						<h3 class="text-lg font-bold my-4" id="get_component_components">get_component_components</h3>
+						<pre class="bg-gray-900 p-4 rounded-lg">
 							<code class="language-python">
-async def get_component_components(
-	sock: socket.socket,
-	name: str
-)</code>
+<span class="text-blue-400">async def</span> <span class="text-yellow-200">get_component_components</span><span class="text-yellow-400">(</span>
+	<span class="text-sky-400">sock:</span> <span class="text-emerald-400">socket.socket</span>,
+	<span class="text-sky-400">name:</span> <span class="text-emerald-400">str</span>
+<span class="text-yellow-400">)</span></code>
 						</pre>
 						<p class="mt-4">Sends a JSON-RPC request to get all child components of a component in the Q-SYS Core device.</p>
 						<ul class="list-disc ml-8 pb-8">
