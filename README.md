@@ -2,6 +2,8 @@
 
 This is a Python module for interfacing with the Q-SYS remote control API over a TCP/IP socket connection. The API provides a way to get and set values of controls in the Q-SYS Designer environment.
 
+[Documentation](https://videogameroulette.github.io/qsys-qrc-py/)
+
 ## Table of Contents
 
 - [Getting started](#Getting-started)
