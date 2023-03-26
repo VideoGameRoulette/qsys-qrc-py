@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -212,7 +211,7 @@ async def get_component_components(
 				<div class="text-lg font-bold">qsys-qrc-py</div>
 				<div class="bg-gray-600 text-gray-200 rounded-md px-3 py-1">Version 0.0.1</div>
 			</div>
-			<button class="menu-one bg-slate-700 hover:bg-slate-500 focus:bg-slate-500 border-2 m-2 rounded-md" aria-expanded="false" id="nav-toggle">
+			<button class="menu-one bg-slate-700 hover:bg-slate-500 focus:bg-slate-500 border-2 m-2 rounded-md" aria-expanded="false" id="dropdown-button">
 				<svg class="w-8 h-8 hamburger" viewBox="0 0 100 100" fill="currentColor">
 					<rect class="line top" width="80" height="10" x="10" y="25" rx="5" />
 					<rect class="line middle" width="80" height="10" x="10" y="45" rx="5" />
@@ -221,7 +220,7 @@ async def get_component_components(
 			</button>
 		</header>
 		<div class="w-full h-full overflow-hidden">
-			<div class="hidden relative top-0 left-0 z-10 flex w-full h-full bg-slate-800 overflow-auto" id="nav-content">
+			<div class="hidden relative top-0 left-0 z-10 flex w-full h-full bg-slate-800 overflow-auto" id="dropdown-menu">
 				<div class="w-full shrink bg-gray-700 p-4 text-sm font-semibold leading-6 text-gray-200 shadow-lg ring-1 ring-gray-900/5 overflow-auto">
 					<h2 class="px-4 py-3 text-lg font-bold">Table of Contents</h2>
 					<ul>
@@ -415,12 +414,6 @@ async def get_component_components(
 	</div>
 </body>
 
-<script>
-	var navToggle = document.getElementById('nav-toggle');
-	var navContent = document.getElementById('nav-content');
-	navToggle.addEventListener("click", () => {
-		navContent.classList.toggle('hidden');
-	});
-</script>
+<script src="index.js"></script>
 
 </html>
