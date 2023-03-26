@@ -179,3 +179,8 @@ Sends a JSON-RPC request to get all child components of a component in the Q-SYS
 
 * sock: The socket object used for communication with the Q-SYS Core device.
 * name: The name of the component to get the child components from.
+
+## Contributors
+
+[Avasam](https://github.com/Avasam)
+[VideoGameRoulette](https://github.com/VideoGameRoulette)
