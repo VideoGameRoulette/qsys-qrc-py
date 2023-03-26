@@ -44,8 +44,9 @@ To use this module, you will need to have a Q-SYS Core Designer project open and
 ## Example
 ```py
 import asyncio
-from qsys_qrc_py import connect_to_qrc, prevent_timeout
 import os
+from qsys_qrc_py import connect_to_qrc, prevent_timeout
+
 
 address = os.environ.get('IP') or "localhost"
 port = os.environ.get('PORT') or 1710
