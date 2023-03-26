@@ -3,137 +3,144 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Q-SYS Remote Control API</title>
+	<title>My Layout</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="absolute bg-gray-900 text-gray-100 w-full h-full">
-	<!-- Sidebar -->
-	<div class="fixed z-10 w-1/5 h-full bg-gray-800 text-white">
-		<h2 class="px-4 py-3 text-lg font-bold">Table of Contents</h2>
-		<ul>
-			<li><a href="#Getting-started" class="block py-2 hover:bg-gray-700 pl-4">Getting started</a></li>
-			<li><a href="#Prerequisites" class="block py-2 hover:bg-gray-700 pl-4">Prerequisites</a></li>
-			<li><a href="#Installation" class="block py-2 hover:bg-gray-700 pl-4">Installation</a></li>
-			<li><a href="#Usage" class="block py-2 hover:bg-gray-700 pl-4">Usage</a></li>
-		</ul>
-		<h2 class="px-4 py-3 text-lg font-bold">Functions</h2>
-		<ul>
-			<li><a href="#send_command" class="block py-2 hover:bg-gray-700 pl-4">send_command</a></li>
-			<li><a href="#logon" class="block py-2 hover:bg-gray-700 pl-4">logon</a></li>
-			<li><a href="#no_op" class="block py-2 hover:bg-gray-700 pl-4">no_op</a></li>
-			<li><a href="#get_status" class="block py-2 hover:bg-gray-700 pl-4">get_status</a></li>
-			<li><a href="#get_control" class="block py-2 hover:bg-gray-700 pl-4">get_control</a></li>
-			<li><a href="#set_control" class="block py-2 hover:bg-gray-700 pl-4">set_control</a></li>
-			<li><a href="#get_component" class="block py-2 hover:bg-gray-700 pl-4">get_component</a></li>
-			<li><a href="#set_component" class="block py-2 hover:bg-gray-700 pl-4">set_component</a></li>
-			<li><a href="#get_component_controls" class="block py-2 hover:bg-gray-700 pl-4">get_component_controls</a></li>
-			<li><a href="#get_component_components" class="block py-2 hover:bg-gray-700 pl-4">get_component_components</a></li>
-		</ul>
-	</div>
-    <!-- Main Page -->
-	<div class="absolute top-0 left-[20%] w-4/5">
-		<div class="w-full px-4 py-3">
-			<h1 class="text-3xl font-bold mb-4">Q-SYS Remote Control API</h1>
-			<p class="mb-4">This is a Python module for interfacing with the Q-SYS remote control API over a TCP/IP socket connection. The API provides a way to get and set values of controls in the Q-SYS Designer environment.</p>
-			<h3 class="text-xl font-bold mb-2" id="Getting-started">Getting started</h3>
-			<h4 class="text-lg font-bold mb-2" id="Prerequisites">Prerequisites</h4>
-			<ul class="list-disc list-inside mb-4">
-				<li>Python 3.7 or higher</li>
-				<li>Q-SYS Core Designer</li>
+<body class="bg-gray-100 overflow-hidden">
+	<header class="fixed top-0 left-0 w-full bg-gray-800 text-white flex justify-start items-center gap-4 py-4 px-6">
+		<div class="text-lg font-bold">qsys-qrc-py</div>
+		<div class="bg-gray-600 text-gray-200 rounded-md px-3 py-1">Version 0.0.1</div>
+	</header>
+	<div class="mt-16 grid grid-cols-[20%_80%] h-screen overflow-hidden">
+		<nav class="bg-gray-900 text-white w-full h-full overflow-y-auto">
+			<h2 class="px-4 py-3 text-lg font-bold">Table of Contents</h2>
+			<ul>
+				<li><a href="#Getting-started" class="block py-2 hover:bg-gray-700 pl-4">Getting started</a></li>
+				<li><a href="#Prerequisites" class="block py-2 hover:bg-gray-700 pl-4">Prerequisites</a></li>
+				<li><a href="#Installation" class="block py-2 hover:bg-gray-700 pl-4">Installation</a></li>
+				<li><a href="#Usage" class="block py-2 hover:bg-gray-700 pl-4">Usage</a></li>
 			</ul>
-			<h4 class="text-lg font-bold mb-2" id="Installation">Installation</h4>
-			<p class="mb-4">You can install this module using pip:</p>
-			<div class="bg-gray-800 p-4 rounded-lg mb-8">
-				<code class="text-gray-400">under construction</code>
+			<h2 class="px-4 py-3 text-lg font-bold">Functions</h2>
+			<ul>
+				<li><a href="#send_command" class="block py-2 hover:bg-gray-700 pl-4">send_command</a></li>
+				<li><a href="#logon" class="block py-2 hover:bg-gray-700 pl-4">logon</a></li>
+				<li><a href="#no_op" class="block py-2 hover:bg-gray-700 pl-4">no_op</a></li>
+				<li><a href="#get_status" class="block py-2 hover:bg-gray-700 pl-4">get_status</a></li>
+				<li><a href="#get_control" class="block py-2 hover:bg-gray-700 pl-4">get_control</a></li>
+				<li><a href="#set_control" class="block py-2 hover:bg-gray-700 pl-4">set_control</a></li>
+				<li><a href="#get_component" class="block py-2 hover:bg-gray-700 pl-4">get_component</a></li>
+				<li><a href="#set_component" class="block py-2 hover:bg-gray-700 pl-4">set_component</a></li>
+				<li><a href="#get_component_controls" class="block py-2 hover:bg-gray-700 pl-4">get_component_controls</a></li>
+				<li><a href="#get_component_components" class="block py-2 hover:bg-gray-700 pl-4">get_component_components</a></li>
+			</ul>
+		</nav>
+		<main class="bg-gray-700 w-full h-full overflow-y-auto">
+			<div class="w-full h-full flex flex-col p-8 gap-4 text-gray-200">
+				<!-- Main content goes here -->
+				<div class="w-full px-4 py-3">
+					<h1 class="text-3xl font-bold mb-4">Q-SYS Remote Control API</h1>
+					<p class="mb-4">This is a Python module for interfacing with the Q-SYS remote control API over a TCP/IP socket connection. The API provides a way to get and set values of controls in the Q-SYS Designer environment.</p>
+					<h3 class="text-xl font-bold mb-2" id="Getting-started">Getting started</h3>
+					<h4 class="text-lg font-bold mb-2" id="Prerequisites">Prerequisites</h4>
+					<ul class="list-disc list-inside mb-4">
+						<li>Python 3.7 or higher</li>
+						<li>Q-SYS Core Designer</li>
+					</ul>
+					<h4 class="text-lg font-bold mb-2" id="Installation">Installation</h4>
+					<p class="mb-4">You can install this module using pip:</p>
+					<div class="bg-gray-800 p-4 rounded-lg mb-8">
+						<code class="text-gray-400">under construction</code>
+					</div>
+					<h3 class="text-xl font-bold mb-2" id="Usage">Usage</h3>
+					<p>To use this module, you will need to have a Q-SYS Core Designer project open and running on your network.</p>
+
+					<h3 class="text-lg font-bold my-4" id="send_command">send_command</h3>
+					<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def send_command(sock: socket.socket, method: str, params: Iterable[str])</code></pre>
+					<p class="mt-4">Sends a JSON-RPC command to a Q-SYS Core device.</p>
+					<ul class="list-disc ml-8">
+						<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+						<li><code>method</code>: The name of the method to call in the JSON-RPC command.</li>
+						<li><code>params</code>: The parameters to pass to the method.</li>
+					</ul>
+
+					<h3 class="text-lg font-bold my-4" id="logon">logon</h3>
+					<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def logon(sock: socket.socket)</code></pre>
+					<p class="mt-4">Logs in to a Q-SYS Core device.</p>
+					<ul class="list-disc ml-8">
+						<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+					</ul>
+
+					<h3 class="text-lg font-bold my-4" id="no_op">no_op</h3>
+					<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def no_op(sock: socket.socket)</code></pre>
+					<p class="mt-4">Sends a JSON-RPC request with no operation to the Q-SYS Core device.</p>
+					<ul class="list-disc ml-8">
+						<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+					</ul>
+
+					<h3 class="text-lg font-bold my-4" id="get_status">get_status</h3>
+					<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_status(sock: socket.socket)</code></pre>
+					<p class="mt-4">Sends a JSON-RPC request to get the status of the Q-SYS Core device.</p>
+					<ul class="list-disc ml-8">
+						<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+					</ul>
+
+					<h3 class="text-lg font-bold my-4" id="get_control">get_control</h3>
+					<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_control(sock: socket.socket, name: str)</code></pre>
+					<p class="mt-4">Sends a JSON-RPC request to get the value of a control in the Q-SYS Core device.</p>
+					<ul class="list-disc ml-8">
+						<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+						<li><code>name</code>: The name of the control to get the value of.</li>
+					</ul>
+
+					<h3 class="text-lg font-bold my-4" id="set_control">set_control</h3>
+					<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def set_control(sock: socket.socket, name: str, value: int, ramp: Optional[float] = None)</code></pre>
+					<p class="mt-4">Sends a JSON-RPC request to get the value of a control in the Q-SYS Core device.</p>
+					<ul class="list-disc ml-8">
+						<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+						<li><code>name</code>: The name of the control to get the value of.</li>
+						<li><code>value</code>: The value to set the control to.</li>
+						<li><code>ramp (optional)</code>: The time in seconds it takes to ramp the control to the new value.</li>
+					</ul>
+
+					<h3 class="text-lg font-bold my-4 text-white" id="get_component">get_component</h3>
+					<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python text-white">async def get_component(sock: socket.socket, name: str, control_name: str)</code></pre>
+					<p class="mt-4">Sends a JSON-RPC request to get the value of a control for a specific component in the Q-SYS Core device.</p>
+					<ul class="list-disc ml-8">
+						<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+						<li><code>name</code>: The name of the component to get the control value for.</li>
+						<li><code>control_name</code>: The name of the control to get the value of.</li>
+					</ul>
+
+					<h3 class="text-lg font-bold my-4" id="set_component">set_component</h3>
+					<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def set_component(sock: socket.socket, name: str, value: int)</code></pre>
+					<p class="mt-4">Sends a JSON-RPC request to set the value of a control for a specific component in the Q-SYS Core device.</p>
+					<ul class="list-disc ml-8">
+						<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+						<li><code>name</code>: The name of the component to set the control value for.</li>
+						<li><code>value</code>: The value to set the control to.</li>
+					</ul>
+
+					<h3 class="text-lg font-bold my-4" id="get_component_controls">get_component_controls</h3>
+					<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_component_controls(sock: socket.socket, name: str)</code></pre>
+					<p class="mt-4">Sends a JSON-RPC request to get all controls of a component in the Q-SYS Core device.</p>
+					<ul class="list-disc ml-8">
+						<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+						<li><code>name</code>: The name of the component to get the controls from.</li>
+					</ul>
+
+					<h3 class="text-lg font-bold my-4" id="get_component_components">get_component_components</h3>
+					<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_component_components(sock: socket.socket, name: str)</code></pre>
+					<p class="mt-4">Sends a JSON-RPC request to get all child components of a component in the Q-SYS Core device.</p>
+					<ul class="list-disc ml-8">
+						<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+						<li><code>name</code>: The name of the component to get the child components from.</li>
+					</ul>
+				</div>
 			</div>
-			<h3 class="text-xl font-bold mb-2" id="Usage">Usage</h3>
-			<p>To use this module, you will need to have a Q-SYS Core Designer project open and running on your network.</p>
-
-			<h3 class="text-lg font-bold my-4" id="send_command">send_command</h3>
-			<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def send_command(sock: socket.socket, method: str, params: Iterable[str])</code></pre>
-			<p class="mt-4">Sends a JSON-RPC command to a Q-SYS Core device.</p>
-			<ul class="list-disc ml-8">
-				<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
-				<li><code>method</code>: The name of the method to call in the JSON-RPC command.</li>
-				<li><code>params</code>: The parameters to pass to the method.</li>
-			</ul>
-
-			<h3 class="text-lg font-bold my-4" id="logon">logon</h3>
-			<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def logon(sock: socket.socket)</code></pre>
-			<p class="mt-4">Logs in to a Q-SYS Core device.</p>
-			<ul class="list-disc ml-8">
-				<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
-			</ul>
-
-			<h3 class="text-lg font-bold my-4" id="no_op">no_op</h3>
-			<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def no_op(sock: socket.socket)</code></pre>
-			<p class="mt-4">Sends a JSON-RPC request with no operation to the Q-SYS Core device.</p>
-			<ul class="list-disc ml-8">
-				<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
-			</ul>
-
-			<h3 class="text-lg font-bold my-4" id="get_status">get_status</h3>
-			<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_status(sock: socket.socket)</code></pre>
-			<p class="mt-4">Sends a JSON-RPC request to get the status of the Q-SYS Core device.</p>
-			<ul class="list-disc ml-8">
-				<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
-			</ul>
-
-			<h3 class="text-lg font-bold my-4" id="get_control">get_control</h3>
-			<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_control(sock: socket.socket, name: str)</code></pre>
-			<p class="mt-4">Sends a JSON-RPC request to get the value of a control in the Q-SYS Core device.</p>
-			<ul class="list-disc ml-8">
-				<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
-				<li><code>name</code>: The name of the control to get the value of.</li>
-			</ul>
-
-			<h3 class="text-lg font-bold my-4" id="set_control">set_control</h3>
-			<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def set_control(sock: socket.socket, name: str, value: int, ramp: Optional[float] = None)</code></pre>
-			<p class="mt-4">Sends a JSON-RPC request to get the value of a control in the Q-SYS Core device.</p>
-			<ul class="list-disc ml-8">
-				<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
-				<li><code>name</code>: The name of the control to get the value of.</li>
-				<li><code>value</code>: The value to set the control to.</li>
-				<li><code>ramp (optional)</code>: The time in seconds it takes to ramp the control to the new value.</li>
-			</ul>
-
-			<h3 class="text-lg font-bold my-4 text-white" id="get_component">get_component</h3>
-			<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python text-white">async def get_component(sock: socket.socket, name: str, control_name: str)</code></pre>
-			<p class="mt-4">Sends a JSON-RPC request to get the value of a control for a specific component in the Q-SYS Core device.</p>
-			<ul class="list-disc ml-8">
-				<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
-				<li><code>name</code>: The name of the component to get the control value for.</li>
-				<li><code>control_name</code>: The name of the control to get the value of.</li>
-			</ul>
-
-			<h3 class="text-lg font-bold my-4" id="set_component">set_component</h3>
-			<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def set_component(sock: socket.socket, name: str, value: int)</code></pre>
-			<p class="mt-4">Sends a JSON-RPC request to set the value of a control for a specific component in the Q-SYS Core device.</p>
-			<ul class="list-disc ml-8">
-				<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
-				<li><code>name</code>: The name of the component to set the control value for.</li>
-				<li><code>value</code>: The value to set the control to.</li>
-			</ul>
-
-			<h3 class="text-lg font-bold my-4" id="get_component_controls">get_component_controls</h3>
-			<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_component_controls(sock: socket.socket, name: str)</code></pre>
-			<p class="mt-4">Sends a JSON-RPC request to get all controls of a component in the Q-SYS Core device.</p>
-			<ul class="list-disc ml-8">
-				<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
-				<li><code>name</code>: The name of the component to get the controls from.</li>
-			</ul>
-
-			<h3 class="text-lg font-bold my-4" id="get_component_components">get_component_components</h3>
-			<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_component_components(sock: socket.socket, name: str)</code></pre>
-			<p class="mt-4">Sends a JSON-RPC request to get all child components of a component in the Q-SYS Core device.</p>
-			<ul class="list-disc ml-8">
-				<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
-				<li><code>name</code>: The name of the component to get the child components from.</li>
-			</ul>
-		</div>
+		</main>
 	</div>
+
 </body>
 
 </html>
