@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<title>Python | QSYS-QRC | Docs</title>
 	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="absolute w-full h-full bg-gray-100 overflow-hidden">
@@ -206,55 +207,65 @@ async def get_component_components(
 		</div>
 	</div>
 	<div class="xl:hidden w-full h-full grid grid-rows-[4rem_auto]">
-		<header class="w-full h-full bg-gray-800 text-white flex justify-start items-center gap-4 py-4 px-6">
-			<div class="text-lg font-bold">qsys-qrc-py</div>
-			<div class="bg-gray-600 text-gray-200 rounded-md px-3 py-1">Version 0.0.1</div>
+		<header class="w-full h-full bg-gray-800 text-white flex justify-between items-center gap-4 py-4 px-4">
+			<div class="flex justify-start items-center gap-4">
+				<div class="text-lg font-bold">qsys-qrc-py</div>
+				<div class="bg-gray-600 text-gray-200 rounded-md px-3 py-1">Version 0.0.1</div>
+			</div>
+			<button class="menu-one bg-slate-700 hover:bg-slate-500 focus:bg-slate-500 border-2 m-2 rounded-md" aria-expanded="false" id="nav-toggle">
+				<svg class="w-8 h-8 hamburger" viewBox="0 0 100 100" fill="currentColor">
+					<rect class="line top" width="80" height="10" x="10" y="25" rx="5" />
+					<rect class="line middle" width="80" height="10" x="10" y="45" rx="5" />
+					<rect class="line bottom" width="80" height="10" x="10" y="65" rx="5" />
+				</svg>
+			</button>
 		</header>
 		<div class="w-full h-full overflow-hidden">
+			<div class="hidden relative top-0 left-0 z-10 flex w-full h-full bg-slate-800 overflow-auto" id="nav-content">
+				<div class="w-full shrink bg-gray-700 p-4 text-sm font-semibold leading-6 text-gray-200 shadow-lg ring-1 ring-gray-900/5 overflow-auto">
+					<h2 class="px-4 py-3 text-lg font-bold">Table of Contents</h2>
+					<ul>
+						<li><a href="#Getting-started_m" class="block py-2 hover:bg-gray-700 pl-4">Getting started</a></li>
+						<li><a href="#Prerequisites_m" class="block py-2 hover:bg-gray-700 pl-4">Prerequisites</a></li>
+						<li><a href="#Installation_m" class="block py-2 hover:bg-gray-700 pl-4">Installation</a></li>
+						<li><a href="#Usage_m" class="block py-2 hover:bg-gray-700 pl-4">Usage</a></li>
+					</ul>
+					<h2 class="px-4 py-3 text-lg font-bold">Functions</h2>
+					<ul>
+						<li><a href="#send_command_m" class="block py-2 hover:bg-gray-700 pl-4">send_command</a></li>
+						<li><a href="#logon_m" class="block py-2 hover:bg-gray-700 pl-4">logon</a></li>
+						<li><a href="#no_op_m" class="block py-2 hover:bg-gray-700 pl-4">no_op</a></li>
+						<li><a href="#get_status_m" class="block py-2 hover:bg-gray-700 pl-4">get_status</a></li>
+						<li><a href="#get_control_m" class="block py-2 hover:bg-gray-700 pl-4">get_control</a></li>
+						<li><a href="#set_control_m" class="block py-2 hover:bg-gray-700 pl-4">set_control</a></li>
+						<li><a href="#get_component_m" class="block py-2 hover:bg-gray-700 pl-4">get_component</a></li>
+						<li><a href="#set_component_m" class="block py-2 hover:bg-gray-700 pl-4">set_component</a></li>
+						<li><a href="#get_component_controls_m" class="block py-2 hover:bg-gray-700 pl-4">get_component_controls</a></li>
+						<li><a href="#get_component_components_m" class="block py-2 hover:bg-gray-700 pl-4">get_component_components</a></li>
+					</ul>
+				</div>
+			</div>
 			<main class="bg-gray-700 w-full h-full overflow-y-auto">
 				<div class="w-full h-full flex flex-col p-8 gap-4 text-gray-200">
 					<!-- Main content goes here -->
 					<div class="w-full h-full">
 						<h1 class="text-3xl font-bold mb-4">Q-SYS Remote Control API</h1>
 						<p class="mb-4">This is a Python module for interfacing with the Q-SYS remote control API over a TCP/IP socket connection. The API provides a way to get and set values of controls in the Q-SYS Designer environment.</p>
-						<div class="w-full bg-gray-800 p-4 text-sm leading-6 text-gray-300 shadow-lg mb-4">
-							<h2 class="px-4 py-3 text-lg font-bold">Table of Contents</h2>
-							<ul class="text-gray-400">
-							  <li><a href="#Getting-started" class="block py-2 hover:text-white pl-4">Getting started</a></li>
-							  <li><a href="#Prerequisites" class="block py-2 hover:text-white pl-4">Prerequisites</a></li>
-							  <li><a href="#Installation" class="block py-2 hover:text-white pl-4">Installation</a></li>
-							  <li><a href="#Usage" class="block py-2 hover:text-white pl-4">Usage</a></li>
-							</ul>
-							<h2 class="px-4 py-3 text-lg font-bold">Functions</h2>
-							<ul class="text-gray-400">
-							  <li><a href="#send_command" class="block py-2 hover:text-white pl-4">send_command</a></li>
-							  <li><a href="#logon" class="block py-2 hover:text-white pl-4">logon</a></li>
-							  <li><a href="#no_op" class="block py-2 hover:text-white pl-4">no_op</a></li>
-							  <li><a href="#get_status" class="block py-2 hover:text-white pl-4">get_status</a></li>
-							  <li><a href="#get_control" class="block py-2 hover:text-white pl-4">get_control</a></li>
-							  <li><a href="#set_control" class="block py-2 hover:text-white pl-4">set_control</a></li>
-							  <li><a href="#get_component" class="block py-2 hover:text-white pl-4">get_component</a></li>
-							  <li><a href="#set_component" class="block py-2 hover:text-white pl-4">set_component</a></li>
-							  <li><a href="#get_component_controls" class="block py-2 hover:text-white pl-4">get_component_controls</a></li>
-							  <li><a href="#get_component_components" class="block py-2 hover:text-white pl-4">get_component_components</a></li>
-							</ul>
-						  </div>
-						  
-						<h3 class="text-xl font-bold mb-2" id="Getting-started">Getting started</h3>
-						<h4 class="text-lg font-bold mb-2" id="Prerequisites">Prerequisites</h4>
+						<h3 class="text-xl font-bold mb-2" id="Getting-started_m">Getting started</h3>
+						<h4 class="text-lg font-bold mb-2" id="Prerequisites_m">Prerequisites</h4>
 						<ul class="list-disc list-inside mb-4">
 							<li>Python 3.7 or higher</li>
 							<li>Q-SYS Core Designer</li>
 						</ul>
-						<h4 class="text-lg font-bold mb-2" id="Installation">Installation</h4>
+						<h4 class="text-lg font-bold mb-2" id="Installation_m">Installation</h4>
 						<p class="mb-4">You can install this module using pip:</p>
 						<div class="bg-gray-800 p-4 rounded-lg mb-8">
 							<code class="text-gray-400">under construction</code>
 						</div>
-						<h3 class="text-xl font-bold mb-2" id="Usage">Usage</h3>
+						<h3 class="text-xl font-bold mb-2" id="Usage_m">Usage</h3>
 						<p>To use this module, you will need to have a Q-SYS Core Designer project open and running on your network.</p>
 
-						<h3 class="text-lg font-bold my-4" id="send_command">send_command</h3>
+						<h3 class="text-lg font-bold my-4" id="send_command_m">send_command</h3>
 						<pre class="bg-gray-800 p-4 rounded-lg">
 							<code class="language-python">
 async def send_command(
@@ -270,7 +281,7 @@ async def send_command(
 							<li><code>params</code>: The parameters to pass to the method.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="logon">logon</h3>
+						<h3 class="text-lg font-bold my-4" id="logon_m">logon</h3>
 						<pre class="bg-gray-800 p-4 rounded-lg">
 							<code class="language-python">
 async def logon(
@@ -282,7 +293,7 @@ async def logon(
 							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="no_op">no_op</h3>
+						<h3 class="text-lg font-bold my-4" id="no_op_m">no_op</h3>
 						<pre class="bg-gray-800 p-4 rounded-lg">
 							<code class="language-python">
 async def no_op(
@@ -294,7 +305,7 @@ async def no_op(
 							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="get_status">get_status</h3>
+						<h3 class="text-lg font-bold my-4" id="get_status_m">get_status</h3>
 						<pre class="bg-gray-800 p-4 rounded-lg">
 							<code class="language-python">
 async def get_status(
@@ -306,7 +317,7 @@ async def get_status(
 							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="get_control">get_control</h3>
+						<h3 class="text-lg font-bold my-4" id="get_control_m">get_control</h3>
 						<pre class="bg-gray-800 p-4 rounded-lg">
 							<code class="language-python">
 async def get_control(
@@ -320,7 +331,7 @@ async def get_control(
 							<li><code>name</code>: The name of the control to get the value of.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="set_control">set_control</h3>
+						<h3 class="text-lg font-bold my-4" id="set_control_m">set_control</h3>
 						<pre class="bg-gray-800 p-4 rounded-lg">
 							<code class="language-python">
 async def set_control(
@@ -338,7 +349,7 @@ async def set_control(
 							<li><code>ramp (optional)</code>: The time in seconds it takes to ramp the control to the new value.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4 text-white" id="get_component">get_component</h3>
+						<h3 class="text-lg font-bold my-4 text-white" id="get_component_m">get_component</h3>
 						<pre class="bg-gray-800 p-4 rounded-lg">
 							<code class="language-python text-white">
 async def get_component(
@@ -354,7 +365,7 @@ async def get_component(
 							<li><code>control_name</code>: The name of the control to get the value of.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="set_component">set_component</h3>
+						<h3 class="text-lg font-bold my-4" id="set_component_m">set_component</h3>
 						<pre class="bg-gray-800 p-4 rounded-lg">
 							<code class="language-python">
 async def set_component(
@@ -370,7 +381,7 @@ async def set_component(
 							<li><code>value</code>: The value to set the control to.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="get_component_controls">get_component_controls</h3>
+						<h3 class="text-lg font-bold my-4" id="get_component_controls_m">get_component_controls</h3>
 						<pre class="bg-gray-800 p-4 rounded-lg">
 							<code class="language-python">
 async def get_component_controls(
@@ -384,7 +395,7 @@ async def get_component_controls(
 							<li><code>name</code>: The name of the component to get the controls from.</li>
 						</ul>
 
-						<h3 class="text-lg font-bold my-4" id="get_component_components">get_component_components</h3>
+						<h3 class="text-lg font-bold my-4" id="get_component_components_m">get_component_components</h3>
 						<pre class="bg-gray-800 p-4 rounded-lg">
 							<code class="language-python">
 async def get_component_components(
@@ -407,7 +418,7 @@ async def get_component_components(
 <script>
 	var navToggle = document.getElementById('nav-toggle');
 	var navContent = document.getElementById('nav-content');
-	navToggle.addEventListener('click', function() {
+	navToggle.addEventListener("click", () => {
 		navContent.classList.toggle('hidden');
 	});
 </script>
