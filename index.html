@@ -8,7 +8,7 @@
 </head>
 
 <body class="absolute w-full h-full bg-gray-100 overflow-hidden">
-	<div class="w-full h-full grid grid-rows-[4rem_auto]">
+	<div class="hidden w-full h-full md:grid grid-rows-[4rem_auto]">
 		<header class="w-full h-full bg-gray-800 text-white flex justify-start items-center gap-4 py-4 px-6">
 			<div class="text-lg font-bold">qsys-qrc-py</div>
 			<div class="bg-gray-600 text-gray-200 rounded-md px-3 py-1">Version 0.0.1</div>
@@ -36,6 +36,118 @@
 					<li><a href="#get_component_components" class="block py-2 hover:bg-gray-700 pl-4">get_component_components</a></li>
 				</ul>
 			</nav>
+			<main class="bg-gray-700 w-full h-full overflow-y-auto">
+				<div class="w-full h-full flex flex-col p-8 gap-4 text-gray-200">
+					<!-- Main content goes here -->
+					<div class="w-full h-full">
+						<h1 class="text-3xl font-bold mb-4">Q-SYS Remote Control API</h1>
+						<p class="mb-4">This is a Python module for interfacing with the Q-SYS remote control API over a TCP/IP socket connection. The API provides a way to get and set values of controls in the Q-SYS Designer environment.</p>
+						<h3 class="text-xl font-bold mb-2" id="Getting-started">Getting started</h3>
+						<h4 class="text-lg font-bold mb-2" id="Prerequisites">Prerequisites</h4>
+						<ul class="list-disc list-inside mb-4">
+							<li>Python 3.7 or higher</li>
+							<li>Q-SYS Core Designer</li>
+						</ul>
+						<h4 class="text-lg font-bold mb-2" id="Installation">Installation</h4>
+						<p class="mb-4">You can install this module using pip:</p>
+						<div class="bg-gray-800 p-4 rounded-lg mb-8">
+							<code class="text-gray-400">under construction</code>
+						</div>
+						<h3 class="text-xl font-bold mb-2" id="Usage">Usage</h3>
+						<p>To use this module, you will need to have a Q-SYS Core Designer project open and running on your network.</p>
+
+						<h3 class="text-lg font-bold my-4" id="send_command">send_command</h3>
+						<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def send_command(sock: socket.socket, method: str, params: Iterable[str])</code></pre>
+						<p class="mt-4">Sends a JSON-RPC command to a Q-SYS Core device.</p>
+						<ul class="list-disc ml-8">
+							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+							<li><code>method</code>: The name of the method to call in the JSON-RPC command.</li>
+							<li><code>params</code>: The parameters to pass to the method.</li>
+						</ul>
+
+						<h3 class="text-lg font-bold my-4" id="logon">logon</h3>
+						<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def logon(sock: socket.socket)</code></pre>
+						<p class="mt-4">Logs in to a Q-SYS Core device.</p>
+						<ul class="list-disc ml-8">
+							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+						</ul>
+
+						<h3 class="text-lg font-bold my-4" id="no_op">no_op</h3>
+						<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def no_op(sock: socket.socket)</code></pre>
+						<p class="mt-4">Sends a JSON-RPC request with no operation to the Q-SYS Core device.</p>
+						<ul class="list-disc ml-8">
+							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+						</ul>
+
+						<h3 class="text-lg font-bold my-4" id="get_status">get_status</h3>
+						<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_status(sock: socket.socket)</code></pre>
+						<p class="mt-4">Sends a JSON-RPC request to get the status of the Q-SYS Core device.</p>
+						<ul class="list-disc ml-8">
+							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+						</ul>
+
+						<h3 class="text-lg font-bold my-4" id="get_control">get_control</h3>
+						<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_control(sock: socket.socket, name: str)</code></pre>
+						<p class="mt-4">Sends a JSON-RPC request to get the value of a control in the Q-SYS Core device.</p>
+						<ul class="list-disc ml-8">
+							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+							<li><code>name</code>: The name of the control to get the value of.</li>
+						</ul>
+
+						<h3 class="text-lg font-bold my-4" id="set_control">set_control</h3>
+						<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def set_control(sock: socket.socket, name: str, value: int, ramp: Optional[float] = None)</code></pre>
+						<p class="mt-4">Sends a JSON-RPC request to get the value of a control in the Q-SYS Core device.</p>
+						<ul class="list-disc ml-8">
+							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+							<li><code>name</code>: The name of the control to get the value of.</li>
+							<li><code>value</code>: The value to set the control to.</li>
+							<li><code>ramp (optional)</code>: The time in seconds it takes to ramp the control to the new value.</li>
+						</ul>
+
+						<h3 class="text-lg font-bold my-4 text-white" id="get_component">get_component</h3>
+						<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python text-white">async def get_component(sock: socket.socket, name: str, control_name: str)</code></pre>
+						<p class="mt-4">Sends a JSON-RPC request to get the value of a control for a specific component in the Q-SYS Core device.</p>
+						<ul class="list-disc ml-8">
+							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+							<li><code>name</code>: The name of the component to get the control value for.</li>
+							<li><code>control_name</code>: The name of the control to get the value of.</li>
+						</ul>
+
+						<h3 class="text-lg font-bold my-4" id="set_component">set_component</h3>
+						<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def set_component(sock: socket.socket, name: str, value: int)</code></pre>
+						<p class="mt-4">Sends a JSON-RPC request to set the value of a control for a specific component in the Q-SYS Core device.</p>
+						<ul class="list-disc ml-8">
+							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+							<li><code>name</code>: The name of the component to set the control value for.</li>
+							<li><code>value</code>: The value to set the control to.</li>
+						</ul>
+
+						<h3 class="text-lg font-bold my-4" id="get_component_controls">get_component_controls</h3>
+						<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_component_controls(sock: socket.socket, name: str)</code></pre>
+						<p class="mt-4">Sends a JSON-RPC request to get all controls of a component in the Q-SYS Core device.</p>
+						<ul class="list-disc ml-8">
+							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+							<li><code>name</code>: The name of the component to get the controls from.</li>
+						</ul>
+
+						<h3 class="text-lg font-bold my-4" id="get_component_components">get_component_components</h3>
+						<pre class="bg-gray-800 p-4 rounded-lg"><code class="language-python">async def get_component_components(sock: socket.socket, name: str)</code></pre>
+						<p class="mt-4">Sends a JSON-RPC request to get all child components of a component in the Q-SYS Core device.</p>
+						<ul class="list-disc ml-8 pb-8">
+							<li><code>sock</code>: The socket object used for communication with the Q-SYS Core device.</li>
+							<li><code>name</code>: The name of the component to get the child components from.</li>
+						</ul>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+	<div class="md:hidden w-full h-full grid grid-rows-[4rem_auto]">
+		<header class="w-full h-full bg-gray-800 text-white flex justify-start items-center gap-4 py-4 px-6">
+			<div class="text-lg font-bold">qsys-qrc-py</div>
+			<div class="bg-gray-600 text-gray-200 rounded-md px-3 py-1">Version 0.0.1</div>
+		</header>
+		<div class="w-full h-full overflow-hidden">
 			<main class="bg-gray-700 w-full h-full overflow-y-auto">
 				<div class="w-full h-full flex flex-col p-8 gap-4 text-gray-200">
 					<!-- Main content goes here -->
