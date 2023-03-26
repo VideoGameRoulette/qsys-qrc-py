@@ -1,14 +1,8 @@
-from __future__ import annotations
-from typing import Optional
-from collections.abc import Callable, Iterable
-import asyncio
-import json
 import socket
-import os
-address = os.environ.get('IP') or "localhost"
-port = os.environ.get('PORT') or 1710
-user = os.environ.get('USER') or "dev"
-pin = os.environ.get('PIN') or "1234"
+import json
+from typing import Iterable, Optional, List
+from collections.abc import Callable
+import asyncio
 BUFFER_SIZE = 1024
 
 
@@ -18,7 +12,9 @@ async def send_command(
     params: Iterable[str]
 ):
     """
-    https://q-syshelp.qsc.com/Content/External_Control_APIs/QRC/QRC_Commands.htm.
+    Official Q-Sys Remote Control Command Documentation
+
+    https://q-syshelp.qsc.com/Content/External_Control_APIs/QRC/QRC_Commands.htm
     """
     sock.send(
         json.dumps({
@@ -29,14 +25,19 @@ async def send_command(
     )
 
 
-async def logon(sock: socket.socket):
-    await send_command(
-        sock,
-        "Logon",
-        {
-            "User": user,
-            "Password": pin
-        })
+async def logon(sock: socket.socket, user: str, pin: str):
+    try:
+        await send_command(
+            sock,
+            "Logon",
+            {
+                "User": user,
+                "Password": pin
+            })
+        return True
+    except Exception as e:
+        print(f"An error occurred during logon: {e}")
+        return e
 
 
 async def no_op(sock: socket.socket):
@@ -72,7 +73,7 @@ async def get_status(sock: socket.socket):
     await send_command(sock, "StatusGet", {})
 
 
-async def get_control(sock: socket.socket, name: str):
+async def get_control(sock: socket.socket, name: List[str]):
     """
     Sends a JSON-RPC request to get the value of a given control from the
     qsys remote control.
@@ -86,7 +87,7 @@ async def get_control(sock: socket.socket, name: str):
         "Value": any
     }
     """
-    await send_command(sock, "Control.Get", [name])
+    await send_command(sock, "Control.Get", name)
 
 
 async def set_control(
@@ -271,25 +272,14 @@ def socket_message_received(encoded_message: bytes):
     print("Server message:", encoded_message)
 
 
-async def main():
-    # Create and listen to a sock
-    print("Initiallize Socket")
+def connect_to_qrc(address: str, port: str):
+    """
+    Connects to the QRC Socket using ip address and port.
+
+    :param address: The ip address of the Qsys machine.
+    :param port: The port address of the Qsys machine.
+    """
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    print("Attempting to Connect to QRC")
     sock.connect((address, port))
-    print("Initiallizing listen_to_server func")
     asyncio.create_task(listen_to_server(sock, socket_message_received))
-
-    # Ping-pong (ensures the socket doesn't time-out)
-    print("Initiallizing prevent_timeout func")
-    asyncio.create_task(prevent_timeout(sock))
-
-    # More commands (wait a bit before, because why not)
-    print("Sleeping for 10 Seconds")
-    await asyncio.sleep(10)
-    print("Attempting to Log In")
-    await logon(sock)
-
-if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(main())
-    asyncio.get_event_loop().run_forever()
+    return sock
