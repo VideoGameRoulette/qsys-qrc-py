@@ -1,1 +1,0 @@
-# qsys-qrc-py
